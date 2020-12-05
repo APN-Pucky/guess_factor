@@ -15,6 +15,18 @@ void usage(char* arg0) {
 	exit(-1);
 }
 
+void print_config() {
+	printf("bases = ");
+	for(double d : BASES) {
+		printf("%f ",d);
+	}
+	printf("\nexponents = ");
+	for(double d : EXPONENTS) {
+		printf("%f ",d);
+	}
+	printf("\n");
+}
+
 int main( int argc, char** argv)
 {
 	double goal =955.439/1.66896833e+01;
@@ -41,11 +53,12 @@ int main( int argc, char** argv)
 	using namespace std::chrono; 
 	auto start = high_resolution_clock::now(); 
 	if(fname == ""){
+		print_config();
 		const_calc(goal);
 	}
 	else {
 		std::vector<double> bases, exponents;
-		read_params("numbers.txt",bases, exponents,true);
+		read_params(fname,bases, exponents,true);
 		flex_calc(goal,bases,exponents);
 	}
 	auto stop = high_resolution_clock::now(); 

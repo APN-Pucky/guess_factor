@@ -17,6 +17,12 @@ goal is the number to reproduce.
 If divisor is supplied goal gets divided by it. Then the guess_factor tries to find the factor inbetween goal and divisor.
 config contains the bases and exponents to be used (see config.txt).
 
+## Example
+```
+./bin/guess_factor 5 1 config.txt
+```
+![IMG](/img/img.png)
+
 ## const vs flex 
 
 ### const 
