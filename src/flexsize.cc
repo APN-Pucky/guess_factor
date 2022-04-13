@@ -88,7 +88,7 @@ void flex_calc( double goal, const std::vector<double>& bases, const std::vector
 			cvalue *= pow(bases[i],exponents[ind[i]]);
 		}
 		printf(" = %8f ",cvalue);
-		printf("=> %8f \n",kv.first);
+		printf("=> %8f (%8f%%)\n",kv.first,kv.first/goal*100.);
 		ii++;
 		if(ii==25)break;
 	}

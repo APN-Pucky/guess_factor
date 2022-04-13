@@ -86,7 +86,7 @@ void const_calc( double goal)
 			cvalue *= pow(bases[i],exponents[ind[i]]);
 		}
 		printf(" = %8f ",cvalue);
-		printf("=> %8f \n",kv.first);
+		printf("=> %8f (%8f%%)\n",kv.first,kv.first/goal*100.);
 		ii++;
 		if(ii==25)break;
 	}
