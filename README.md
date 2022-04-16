@@ -35,7 +35,7 @@ pip3 install . [--user]
 
 ### const 
 
-bases and exponents from src/config.h will be used. Needs a recompile with make, but is generally faster.
+bases and exponents from src/config.h will be used. Needs a recompile with make, but might be faster.
 
 ###  flex
 
