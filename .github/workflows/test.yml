@@ -13,6 +13,8 @@ jobs:
       container:
         image: apnpucky/ubuntu-pip
       steps:
+        - name: work around permission issue
+          run: git config --global --add safe.directory /__w/guess_factor/guess_factor
         - uses: actions/checkout@v2
           with:
             fetch-depth: "0"
