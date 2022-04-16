@@ -48,12 +48,12 @@ void print_result(double goal, T bases, U exponents,
     printf(" == ");
     double cvalue = 1.0;
     for (int i = 0; i < ind.size(); i++) {
-      printf(" %.8f**", bases[i]);
-      printf("%.8f *", exponents[ind[i]]);
+      printf(" %+.8f**", bases[i]);
+      printf("%+.8f *", exponents[ind[i]]);
       cvalue *= pow(bases[i], exponents[ind[i]]);
     }
-    printf(" = %.8f ", cvalue);
-    printf("=> %.8f (%8f%%)\n", goal - cvalue, (goal - cvalue) / goal * 100);
+    printf(" = %+.8f ", cvalue);
+    printf("=> %+.8f (%8f%%)\n", goal - cvalue, (goal - cvalue) / goal * 100);
   }
 }
 #endif
