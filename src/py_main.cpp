@@ -38,11 +38,16 @@ void py_calc_print(double goal, std::vector<double> &bases,
 PYBIND11_MODULE(guessfactor, m) {
   m.doc() = R"pbdoc(
         Pybind11 guess factor plugin
-        -----------------------
-        .. currentmodule:: guess factor
+        -------------------------------
+        .. currentmodule:: guessfactor
         .. autosummary::
-           :toctree: _generate
-           calc
+	   :toctree: _autosummary
+
+	   calc
+	   calc_indices
+	   calc_values
+	   calc_print
+
     )pbdoc";
 
   m.def("calc", &py_calc, R"pbdoc(
