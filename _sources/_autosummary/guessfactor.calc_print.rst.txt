@@ -1,0 +1,6 @@
+﻿guessfactor.calc\_print
+=======================
+
+.. currentmodule:: guessfactor
+
+.. autofunction:: calc_print
