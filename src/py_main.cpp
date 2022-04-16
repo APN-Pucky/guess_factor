@@ -37,13 +37,13 @@ PYBIND11_MODULE(guessfactor, m) {
         -------------------------------
         .. currentmodule:: guessfactor
         .. autosummary::
-	   :toctree: _autosummary
+           :toctree: _autosummary
 
-	   calc
-	   calc_values
-	   calc_print
-     get_max_threads
-     set_num_threads
+           calc
+           calc_values
+           calc_print
+           get_max_threads
+           set_num_threads
 
     )pbdoc";
 
