@@ -10,14 +10,18 @@ jobs:
       container:
         image: apnpucky/ubuntu-pip
       steps:
+        - name: work around permission issue
+          run: git config --global --add safe.directory /__w/guess_factor/guess_factor
         - uses: actions/checkout@v2
           with:
             fetch-depth: "0"
+            submodules: recursive
         - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
         - name: Build 
           run: pip3 install .
         - name: Generate Docs
-          run: cd docs && make html
+          working-directory: ./docs
+          run: make html
 #        - name: Tests
 #          run: make test
 #        - name: Build Sphinx

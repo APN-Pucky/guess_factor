@@ -40,7 +40,6 @@ PYBIND11_MODULE(guessfactor, m) {
 	   :toctree: _autosummary
 
 	   calc
-	   calc_indices
 	   calc_values
 	   calc_print
 
