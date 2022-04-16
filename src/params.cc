@@ -34,7 +34,8 @@ void read_params(std::string fn, std::vector<double> &bases,
     read_line(str, "bases", bases, print);
     read_line(str, "exponents", exponents, print);
   }
-
+  std::sort(exponents.begin(), exponents.end());
+  std::sort(bases.begin(), bases.end());
 }
 
 void main2() {

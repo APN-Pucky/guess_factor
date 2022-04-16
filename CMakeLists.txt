@@ -24,12 +24,12 @@ add_subdirectory (src)
 
 
 
-IF(not ${NDEBUG})
+#IF(not ${NDEBUG})
 add_subdirectory(extern/pybind11)
-pybind11_add_module(guessfactor src/cc/py_main.cpp)
+pybind11_add_module(guessfactor src/py_main.cpp)
 target_link_libraries(guessfactor PRIVATE libguessfactor)
-target_compile_definitions(guessfactor PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
-endif()
+#target_compile_definitions(guessfactor PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
+#endif()
 
 if(COVERAGE)
 SETUP_TARGET_FOR_COVERAGE_LCOV(

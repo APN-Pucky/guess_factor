@@ -15,6 +15,7 @@
 #define NUMARGS(...) (sizeof((double[]){__VA_ARGS__}) / sizeof(double))
 
 typedef unsigned long long hash_t;
+typedef std::vector<std::vector<int>> return_t;
 
 template <typename T> hash_t hashit(const T &ind, const int max) {
   hash_t r = 0;
@@ -32,7 +33,7 @@ std::vector<std::vector<int>> flex_calc(double goal, const T &bases,
                                         const U &exponents);
 
 template <typename T, typename U>
-std::vector<std::vector<int>> sort_calc(double goal, T bases, U exponents);
+std::vector<std::vector<int>> sort_calc(double goal, T &bases, U &exponents);
 
 std::vector<std::vector<int>> const_calc(double goal);
 

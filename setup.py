@@ -118,7 +118,7 @@ class CMakeBuild(build_ext):
 # logic and declaration, and simpler if you include description/version in a file.
 setup(
     name="guessfactor",
-    version="0.0.1",
+    version="0.0.2",
     author="APN",
     author_email="a.p.n@wwu.de",
     description="",

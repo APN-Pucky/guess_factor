@@ -1,8 +1,7 @@
 cmake_minimum_required (VERSION 3.4)
 project (lib_guess_factor)
 
-include_directories(h)
-file(GLOB MyCSources cc/*.cc)
+file(GLOB MyCSources *.cc)
 add_library(libguessfactor ${MyCSources})
 
 if(OpenMP_CXX_FOUND)

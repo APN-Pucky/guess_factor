@@ -20,10 +20,19 @@ std::vector<int> dehashit(const hash_t &hash, const int &max, const int SIZE) {
   assert(hashit(ind, max) == hash);
   return ind;
 }
-
+/**
+ * @brief Gets the closest values to goal from combining bases and exponents.
+ *
+ *
+ * @tparam T std::vector<double> or std::array<double,N>
+ * @tparam U std::vector<double> or std::array<double,M>
+ * @param goal factor to reproduce with bases and expoenents
+ * @param bases sorted list of bases
+ * @param exponents sorted list of exponents
+ * @return return_t
+ */
 template <typename T, typename U>
-std::vector<std::vector<int>> flex_calc(const double goal, const T &bases,
-                                        const U &exponents) {
+return_t flex_calc(const double goal, const T &bases, const U &exponents) {
   // const int THREADS = omp_get_num_threads();
   const int bases_size = bases.size();
   const int exponents_size = exponents.size();
@@ -121,20 +130,22 @@ std::vector<std::vector<int>> flex_calc(const double goal, const T &bases,
 }
 
 template <typename T, typename U>
-std::vector<std::vector<int>> sort_calc(const double goal, T bases,
-                                        U exponents) {
+return_t sort_calc(const double goal, T &bases, U &exponents) {
   std::sort(exponents.begin(), exponents.end());
   std::sort(bases.begin(), bases.end());
   return flex_calc(goal, bases, exponents);
 }
-
-template std::vector<std::vector<int>>
-sort_calc<std::vector<double>, std::vector<double>>(
-    const double goal, std::vector<double> bases,
-    std::vector<double> exponents);
-
-// Const calc is significantly faster as it knows it size beforehand
-std::vector<std::vector<int>> const_calc(double goal) {
-  return sort_calc(goal, std::array<double, NUMARGS(BASES)>{BASES},
-                   std::array<double, NUMARGS(EXPONENTS)>{EXPONENTS});
+// deprecated
+return_t const_calc(double goal) {
+  auto bases = std::array<double, NUMARGS(BASES)>{BASES};
+  auto exponents = std::array<double, NUMARGS(EXPONENTS)>{EXPONENTS};
+  return sort_calc(goal, bases, exponents);
 }
+
+// Explicit template instatiation
+
+template return_t sort_calc(const double goal, std::vector<double> &bases,
+                            std::vector<double> &exponents);
+
+template return_t flex_calc(const double goal, const std::vector<double> &bases,
+                            const std::vector<double> &exponents);
