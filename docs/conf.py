@@ -37,6 +37,7 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.napoleon',
     'sphinx.ext.githubpages',
+    'sphinx.ext.viewcode',
 ]
 
 autosummary_generate = True
