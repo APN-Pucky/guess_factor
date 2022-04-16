@@ -5,6 +5,5 @@ build/
 *.egg-info
 *.out
 bin
-Makefile
 docs/_*/
 *.swp
