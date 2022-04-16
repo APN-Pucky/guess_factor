@@ -42,6 +42,8 @@ PYBIND11_MODULE(guessfactor, m) {
 	   calc
 	   calc_values
 	   calc_print
+     get_max_threads
+     set_num_threads
 
     )pbdoc";
 
