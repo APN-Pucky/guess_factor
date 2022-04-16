@@ -5,6 +5,10 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/extern/cmake)
 
+
+#OpenMP
+find_package(OpenMP REQUIRED)
+
 if(PROFILE)
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pg ")
 SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pg ")
@@ -22,7 +26,7 @@ add_subdirectory (src)
 
 IF(not ${NDEBUG})
 add_subdirectory(extern/pybind11)
-pybind11_add_module(guessfactor src/py_main.cpp)
+pybind11_add_module(guessfactor src/cc/py_main.cpp)
 target_link_libraries(guessfactor PRIVATE libguessfactor)
 target_compile_definitions(guessfactor PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
 endif()

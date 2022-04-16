@@ -6,14 +6,11 @@
 #include <stdio.h>
 #include <vector>
 
+#include "calc.h"
 #include "config.h"
-#include "constsize.h"
-#include "flexsize.h"
 #include "info.h"
 #include "params.h"
 #include "util.h"
-
-#define NUMARGS(...) (sizeof((double[]){__VA_ARGS__}) / sizeof(double))
 
 void usage(char *arg0) {
   printf("Usage: %s goal [divisor [configfile]]\n", arg0);
@@ -72,7 +69,8 @@ int main(int argc, char **argv) {
     std::vector<double> bases, exponents;
     read_params(fname, bases, exponents, false);
     print_config(bases, exponents);
-    auto res = flex_calc(goal, bases, exponents);
+    auto res = flex_calc<std::vector<double>, std::vector<double>>(goal, bases,
+                                                                   exponents);
     print_result(goal, bases, exponents, res);
   }
   auto stop = high_resolution_clock::now();

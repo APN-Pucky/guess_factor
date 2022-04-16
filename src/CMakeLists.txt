@@ -5,5 +5,10 @@ include_directories(h)
 file(GLOB MyCSources cc/*.cc)
 add_library(libguessfactor ${MyCSources})
 
+if(OpenMP_CXX_FOUND)
+  set( TARGET_LINK_LIBS ${TARGET_LINK_LIBS}  OpenMP::OpenMP_CXX )
+endif()
+target_link_libraries(libguessfactor ${TARGET_LINK_LIBS})
+
 add_executable(guess_factor main.cpp)
 target_link_libraries(guess_factor libguessfactor)
