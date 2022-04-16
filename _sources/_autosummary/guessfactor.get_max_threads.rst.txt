@@ -1,0 +1,6 @@
+﻿guessfactor.get\_max\_threads
+=============================
+
+.. currentmodule:: guessfactor
+
+.. autofunction:: get_max_threads

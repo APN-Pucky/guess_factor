@@ -1,0 +1,6 @@
+﻿guessfactor.set\_num\_threads
+=============================
+
+.. currentmodule:: guessfactor
+
+.. autofunction:: set_num_threads
