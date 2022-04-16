@@ -9,8 +9,9 @@
 #include "config.h"
 #include "constsize.h"
 #include "flexsize.h"
-#include "main.h"
+#include "info.h"
 #include "params.h"
+#include "util.h"
 
 #define NUMARGS(...) (sizeof((double[]){__VA_ARGS__}) / sizeof(double))
 
@@ -26,6 +27,17 @@ void print_config() {
   }
   printf("\nexponents = ");
   for (double d : {EXPONENTS}) {
+    printf("%f ", d);
+  }
+  printf("\n");
+}
+void print_config(std::vector<double> &bases, std::vector<double> &exponents) {
+  printf("bases = ");
+  for (double d : bases) {
+    printf("%f ", d);
+  }
+  printf("\nexponents = ");
+  for (double d : exponents) {
     printf("%f ", d);
   }
   printf("\n");
@@ -58,7 +70,8 @@ int main(int argc, char **argv) {
                  std::array<double, NUMARGS(EXPONENTS)>{EXPONENTS}, res);
   } else {
     std::vector<double> bases, exponents;
-    read_params(fname, bases, exponents, true);
+    read_params(fname, bases, exponents, false);
+    print_config(bases, exponents);
     auto res = flex_calc(goal, bases, exponents);
     print_result(goal, bases, exponents, res);
   }

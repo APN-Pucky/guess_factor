@@ -7,3 +7,4 @@ build/
 bin
 Makefile
 docs/_*/
+*.swp
