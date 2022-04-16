@@ -1,0 +1,6 @@
+﻿guessfactor.calc
+================
+
+.. currentmodule:: guessfactor
+
+.. autofunction:: calc

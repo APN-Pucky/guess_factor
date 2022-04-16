@@ -1,0 +1,6 @@
+﻿guessfactor.calc\_values
+========================
+
+.. currentmodule:: guessfactor
+
+.. autofunction:: calc_values
