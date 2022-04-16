@@ -23,7 +23,8 @@ jobs:
         - name: Build 
           run: pip3 install .
         - name: Generate Doc
-          run: cd docs && make html
+          working-directory: ./docs
+          run: make html
 #        - name: Tests
 #          run: make test
 #        - name: Build Sphinx
