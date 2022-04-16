@@ -19,6 +19,12 @@ config contains the bases and exponents to be used (see config.txt).
 
 As result a list of the closest combinations of exponents and bases is displayed.
 
+### Pybind
+
+```
+pip3 install . [--user]
+```
+
 ## Example
 ```
 ./bin/guess_factor 5 1 config.txt
