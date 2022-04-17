@@ -1,4 +1,5 @@
 # guess_factor
+Doc: https://apn-pucky.github.io/guess_factor/index.html
 
 Guesses a factor by looping over possible exponents and bases.
 
