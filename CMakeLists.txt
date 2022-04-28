@@ -24,7 +24,7 @@ add_subdirectory (guessfactor)
 
 add_executable(guess_factor guessfactor/main.cpp)
 target_link_libraries(guess_factor libguessfactor)
-install(TARGETS guess_factor LIBRARY DESTINATION guessfactor)
+install(TARGETS guess_factor)
 
 
 #IF(not ${NDEBUG})
