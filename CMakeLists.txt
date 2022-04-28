@@ -20,13 +20,16 @@ include(CodeCoverage)
 APPEND_COVERAGE_COMPILER_FLAGS()
 endif()
 
-add_subdirectory (src)
+add_subdirectory (guessfactor)
 
+add_executable(guess_factor guessfactor/main.cpp)
+target_link_libraries(guess_factor libguessfactor)
+install(TARGETS guess_factor LIBRARY DESTINATION guessfactor)
 
 
 #IF(not ${NDEBUG})
 add_subdirectory(extern/pybind11)
-pybind11_add_module(guessfactor src/py_main.cpp)
+pybind11_add_module(guessfactor guessfactor/py_main.cpp)
 target_link_libraries(guessfactor PRIVATE libguessfactor)
 #target_compile_definitions(guessfactor PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
 #endif()

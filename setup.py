@@ -3,8 +3,10 @@ import re
 import subprocess
 import sys
 
-from setuptools import Extension, setup
+from skbuild import  setup
+
 from setuptools.command.build_ext import build_ext
+from setuptools import Extension
 
 # Convert distutils Windows platform specifiers to CMake -A arguments
 PLAT_TO_CMAKE = {
@@ -114,17 +116,15 @@ class CMakeBuild(build_ext):
         subprocess.check_call(["cmake", "--build", "."] + build_args, cwd=build_temp)
 
 
-# The information here can also be placed in setup.cfg - better separation of
-# logic and declaration, and simpler if you include description/version in a file.
+
+
 setup(
     name="guessfactor",
-    version="0.0.2",
-    author="APN",
-    author_email="a.p.n@wwu.de",
-    description="",
-    long_description="",
+    version="0.0.6",
+    description="a minimal example package (cpp version)",
+    author='The scikit-build team',
+    license="MIT",
     ext_modules=[CMakeExtension("guessfactor")],
     cmdclass={"build_ext": CMakeBuild},
-    zip_safe=False,
-    python_requires=">=3.6",
+    packages=['guessfactor'],
 )
