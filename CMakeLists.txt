@@ -1,5 +1,9 @@
 cmake_minimum_required (VERSION 3.4)
 project (guess_factor)
+
+option(PROFILE "Enable profile mode" OFF)
+option(COVERAGE "Enable coverage mode" OFF)
+
 if(NOT CMAKE_BUILD_TYPE)
 	set(CMAKE_BUILD_TYPE "Release")
 endif()
