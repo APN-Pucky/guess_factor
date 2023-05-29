@@ -45,7 +45,7 @@ jobs:
 #            password: ${{ secrets.test_pypi_token }}
 #            repository_url: https://test.pypi.org/legacy/
         - name: Upload Github Pages
-          uses: JamesIves/github-pages-deploy-action@v4.4.1
+          uses: JamesIves/github-pages-deploy-action@v4.4.2
           with:
             BRANCH: gh-pages # The branch the action should deploy to.
             FOLDER: docs/_build/html # The folder the action should deploy.
