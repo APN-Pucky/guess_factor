@@ -41,7 +41,7 @@ jobs:
 #          with:
 #            password: ${{ secrets.pypi_token }}
         - name: Deploy Github Pages
-          uses: JamesIves/github-pages-deploy-action@v4.4.2
+          uses: JamesIves/github-pages-deploy-action@v4.4.3
           with:
             BRANCH: gh-pages # The branch the action should deploy to.
             FOLDER: docs/_build/html # The folder the action should deploy.
